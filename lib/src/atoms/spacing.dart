@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:flutter/material.dart';
@@ -25,7 +25,6 @@ final class VGap extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SizedBox(height: size);
 }
-
 
 final class HGap extends StatelessWidget {
   const HGap._(this.size);

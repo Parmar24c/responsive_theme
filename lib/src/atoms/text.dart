@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import "package:flutter/material.dart";
@@ -172,7 +172,7 @@ class Txt extends StatelessWidget {
     this.fontWeight,
   }) : level = AppTextLevel.tiny12;
 
-const Txt.appbar(
+  const Txt.appbar(
     this.text, {
     super.key,
     this.color,
@@ -189,7 +189,7 @@ const Txt.appbar(
     this.fontWeight,
   }) : level = AppTextLevel.title18;
 
-const Txt.button(
+  const Txt.button(
     this.text, {
     super.key,
     this.color,
@@ -242,19 +242,19 @@ const Txt.button(
       textAlign: textAlign,
       style: defaultStyle
           ?.copyWith(
-            color: color,
-            fontSize: fontSize,
-            fontWeight: fontWeight,
-            decoration: isUnderLine ?? false ? TextDecoration.underline : null,
-            decorationColor: color,
-        fontFamily: "Poppins"
-          )
+              color: color,
+              fontSize: fontSize,
+              fontWeight: fontWeight,
+              decoration:
+                  isUnderLine ?? false ? TextDecoration.underline : null,
+              decorationColor: color,
+              fontFamily: "Poppins")
           .merge(style),
       maxLines: maxLines,
-      textDirection: textDirection ?? this.textDirection,
-      locale: locale ?? this.locale,
-      softWrap: softWrap ?? this.softWrap,
-      semanticsLabel: semanticsLabel ?? this.semanticsLabel,
+      textDirection: textDirection ?? textDirection,
+      locale: locale ?? locale,
+      softWrap: softWrap ?? softWrap,
+      semanticsLabel: semanticsLabel ?? semanticsLabel,
     );
   }
 }

@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'dart:ui' as ui;
@@ -48,7 +48,7 @@ class AppResponsiveTheme extends StatelessWidget {
     var theme = AppThemeData.regular(config.lightColors);
 
     /// Updating the colors for the current brightness
-    final colorMode = this.themeMode ?? colorModeOf(context);
+    final colorMode = themeMode ?? colorModeOf(context);
     switch (colorMode) {
       case AppThemeMode.dark:
         theme = theme.withColors(config.darkColors);

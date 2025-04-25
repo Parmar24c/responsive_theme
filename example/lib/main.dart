@@ -48,23 +48,23 @@ class AppColors {
 
   // Colors for light theme
   factory AppColors.light() => AppColors(
-    background: Color(0xFFFFFFFF),
-    primary: Color(0xFF6200EE),
-    secondary: Color(0xFF03DAC6),
-    accent: Color(0xFF3700B3),
-    error: Color(0xFFB00020),
-    success: Color(0xFF4CAF50),
-  );
+        background: Color(0xFFFFFFFF),
+        primary: Color(0xFF6200EE),
+        secondary: Color(0xFF03DAC6),
+        accent: Color(0xFF3700B3),
+        error: Color(0xFFB00020),
+        success: Color(0xFF4CAF50),
+      );
 
   // Colors for dark theme
   factory AppColors.dark() => AppColors(
-    background: Color(0xFF121212),
-    primary: Color(0xFFBB86FC),
-    secondary: Color(0xFF03DAC6),
-    accent: Color(0xFF03DAC5),
-    error: Color(0xFFCF6679),
-    success: Color(0xFF4CAF50),
-  );
+        background: Color(0xFF121212),
+        primary: Color(0xFFBB86FC),
+        secondary: Color(0xFF03DAC6),
+        accent: Color(0xFF03DAC5),
+        error: Color(0xFFCF6679),
+        success: Color(0xFF4CAF50),
+      );
 }
 
 /// this extention make easy to access colors
@@ -103,12 +103,14 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void loadCurrentTheme(BuildContext context, {ThemeMode themeMode = ThemeMode.system}) async {
+  void loadCurrentTheme(BuildContext context,
+      {ThemeMode themeMode = ThemeMode.system}) async {
     final sp = await SharedPreferences.getInstance();
     final isDarkMode = sp.getBool("isDarkTheme");
     if (isDarkMode == null) {
       final useDarkTheme = switch (themeMode) {
-        ThemeMode.system => AppResponsiveTheme.colorModeOf(context) == AppThemeMode.dark,
+        ThemeMode.system =>
+          AppResponsiveTheme.colorModeOf(context) == AppThemeMode.dark,
         ThemeMode.light => false,
         ThemeMode.dark => true,
       };
@@ -201,7 +203,8 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: Insets.medium16.paddingAll,
           children: <Widget>[
             VGap.large24(),
-            Txt.title24('Welcome to Responsive Theme', color: context.colors.primary),
+            Txt.title24('Welcome to Responsive Theme',
+                color: context.colors.primary),
             VGap.medium16(),
             Txt.regular16(
               'Build beautiful responsive apps with ease',
@@ -253,7 +256,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {},
                 child: Container(
                   margin: EdgeInsets.all(4),
-                  padding: Insets.medium16.paddingAll, // responsive padding/margin
+                  padding:
+                      Insets.medium16.paddingAll, // responsive padding/margin
                   decoration: BoxDecoration(
                     color: context.colors.primary,
                     // responsive radius size with extension

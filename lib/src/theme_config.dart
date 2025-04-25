@@ -31,7 +31,8 @@ class ThemeConfig {
   bool get isLandscape => _mediaQueryData.orientation == Orientation.landscape;
 
   EdgeInsets get horizontalBodyPadding {
-    return EdgeInsets.symmetric(horizontal: value(16, tablet: 100, desktop: 200));
+    return EdgeInsets.symmetric(
+        horizontal: value(16, tablet: 100, desktop: 200));
   }
 
   double get gutterSmall => value(8, tablet: 16, desktop: 24);
@@ -53,8 +54,10 @@ class ThemeConfig {
     blockSizeHorizontal = screenWidth / 100;
     blockSizeVertical = screenHeight / 100;
 
-    _safeAreaHorizontal = _mediaQueryData.padding.left + _mediaQueryData.padding.right;
-    _safeAreaVertical = _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
+    _safeAreaHorizontal =
+        _mediaQueryData.padding.left + _mediaQueryData.padding.right;
+    _safeAreaVertical =
+        _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
     safeBlockHorizontal = (screenWidth - _safeAreaHorizontal) / 100;
     safeBlockVertical = (screenHeight - _safeAreaVertical) / 100;
   }
@@ -67,14 +70,19 @@ extension SizeConfigExtension on num {
 
   double get t {
     final aspectRatio = ThemeConfig.screenWidth / ThemeConfig.screenHeight;
-    final diagonalSize = sqrt(ThemeConfig.screenWidth * ThemeConfig.screenWidth + ThemeConfig.screenHeight * ThemeConfig.screenHeight); // Calculating diagonal size of the screen
+    final diagonalSize = sqrt(
+        ThemeConfig.screenWidth * ThemeConfig.screenWidth +
+            ThemeConfig.screenHeight *
+                ThemeConfig
+                    .screenHeight); // Calculating diagonal size of the screen
     final scaleFactor = diagonalSize / 100;
     final adjustedScale = scaleFactor * (aspectRatio > 1.5 ? 0.7 : 1);
     return this * adjustedScale;
   }
 
   double get r {
-    final averageBlockSize = (ThemeConfig.blockSizeHorizontal + ThemeConfig.blockSizeVertical) / 2;
+    final averageBlockSize =
+        (ThemeConfig.blockSizeHorizontal + ThemeConfig.blockSizeVertical) / 2;
     return this * averageBlockSize;
   }
 }

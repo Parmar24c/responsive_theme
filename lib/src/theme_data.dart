@@ -1,9 +1,7 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-import 'dart:ui';
 
 import 'package:equatable/equatable.dart';
 import 'package:responsive_theme/responsive_theme.dart';

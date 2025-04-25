@@ -1,4 +1,3 @@
-
 library responsive_theme;
 
 export 'src/atoms/border_radius.dart';

@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 // ignore_for_file: non_constant_identifier_names
@@ -21,14 +21,22 @@ class AppTypographyData extends Equatable {
   });
 
   factory AppTypographyData.regular() => const AppTypographyData(
-        titleX64: TextStyle(fontSize: 64, fontWeight: FontWeight.w500, package: _packageName),
-        title32: TextStyle(fontSize: 32, fontWeight: FontWeight.w500, package: _packageName),
-        title24: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, package: _packageName),
-        title18: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, package: _packageName),
-        regular16: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, package: _packageName),
-        regular14: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, package: _packageName),
-        small13: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, package: _packageName),
-        tiny12: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, package: _packageName),
+        titleX64: TextStyle(
+            fontSize: 64, fontWeight: FontWeight.w500, package: _packageName),
+        title32: TextStyle(
+            fontSize: 32, fontWeight: FontWeight.w500, package: _packageName),
+        title24: TextStyle(
+            fontSize: 24, fontWeight: FontWeight.w500, package: _packageName),
+        title18: TextStyle(
+            fontSize: 18, fontWeight: FontWeight.w500, package: _packageName),
+        regular16: TextStyle(
+            fontSize: 16, fontWeight: FontWeight.w400, package: _packageName),
+        regular14: TextStyle(
+            fontSize: 14, fontWeight: FontWeight.w400, package: _packageName),
+        small13: TextStyle(
+            fontSize: 13, fontWeight: FontWeight.w400, package: _packageName),
+        tiny12: TextStyle(
+            fontSize: 12, fontWeight: FontWeight.w400, package: _packageName),
       );
 
   static const _packageName = null;

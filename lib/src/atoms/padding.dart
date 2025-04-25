@@ -1,6 +1,6 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//               CREATED BY NAYAN PARMAR  
-//                      © 2025  
+//               CREATED BY NAYAN PARMAR
+//                      © 2025
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import 'package:flutter/material.dart';
@@ -29,6 +29,8 @@ final class Insets {
 
 extension PaddingX on double {
   EdgeInsetsGeometry get paddingAll => EdgeInsets.all(this);
-  EdgeInsetsGeometry get paddingHorizontal => EdgeInsets.symmetric(horizontal: this);
-  EdgeInsetsGeometry get paddingVertical => EdgeInsets.symmetric(vertical: this);
+  EdgeInsetsGeometry get paddingHorizontal =>
+      EdgeInsets.symmetric(horizontal: this);
+  EdgeInsetsGeometry get paddingVertical =>
+      EdgeInsets.symmetric(vertical: this);
 }
