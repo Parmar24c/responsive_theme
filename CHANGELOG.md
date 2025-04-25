@@ -1,5 +1,5 @@
 # Changelog
 
-## 0.0.1 - 2025-04-26
+## 0.0.1
 
-* Initial release of responsive_theme
+- Initial release of responsive_theme
