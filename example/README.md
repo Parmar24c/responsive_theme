@@ -1,0 +1,4 @@
+# example
+
+Responsive Theme Example
+
