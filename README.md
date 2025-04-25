@@ -5,6 +5,8 @@ A Flutter package designed to simplify responsive theming in your applications, 
 [![pub package](https://img.shields.io/badge/pub-v1.0.0-blue)](https://pub.dev/packages/responsive_theme)
 [![license](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
+![Responsive Theme](responsive_theme.png)
+
 ## Features
 
 - 🎨 **Theming System**: Easy light/dark mode implementation
@@ -476,14 +478,18 @@ Container(
 
 5. **Reusable Components**: Build reusable UI components that leverage the theme system for consistent styling.
 
+
+<p align="center">
+  🌟 Love this package? Give it a ⭐ on GitHub & show some 💖 — your support means everything!
+  <br>
+  ~ 👤 Nayan Parmar
+</p>
+
+
 ## Example Project
 
 Check out the [example project](https://github.com/Parmar24c/responsive_theme/tree/main/example) for a complete implementation of responsive_theme.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Author
-
-Created by Nayan Parmar © 2025.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
