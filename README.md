@@ -5,7 +5,7 @@ A Flutter package designed to simplify responsive theming in your applications, 
 [![pub package](https://img.shields.io/badge/pub-v1.0.0-blue)](https://pub.dev/packages/responsive_theme)
 [![license](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
-![Responsive Theme](responsive_theme.png)
+![Responsive Theme](responsive_theme2.png)
 
 ## Features
 

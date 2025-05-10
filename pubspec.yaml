@@ -1,6 +1,6 @@
 name: responsive_theme
 description: Adaptive Styles – from DARK to BRIGHT. Powerful Theme Solution for Flutter Apps. "#flutter" "#responsive" "#theme"
-version: 0.0.1
+version: 0.0.2-dev.1
 homepage: https://github.com/Parmar24c/responsive_theme
 
 environment:
