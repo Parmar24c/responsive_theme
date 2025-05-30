@@ -7,3 +7,7 @@
 ## 0.0.2
 
 - Bug Fixes
+
+## 0.0.3
+
+- Made ColorConfig optional

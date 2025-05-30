@@ -5,14 +5,15 @@
 
 import 'dart:ui' as ui;
 
+import 'package:flutter/material.dart' show Theme;
 import 'package:flutter/widgets.dart';
 import 'package:responsive_theme/responsive_theme.dart';
 
 class ColorConfig {
-  final ThemeColor lightColors;
-  final ThemeColor darkColors;
+  final ThemeColor? lightColors;
+  final ThemeColor? darkColors;
 
-  const ColorConfig({required this.lightColors, required this.darkColors});
+  const ColorConfig({this.lightColors, this.darkColors});
 }
 
 enum AppThemeMode {
@@ -25,12 +26,12 @@ enum AppThemeMode {
 class AppResponsiveTheme extends StatelessWidget {
   const AppResponsiveTheme({
     required this.child,
-    required this.config,
+    this.config,
     super.key,
     this.themeMode,
   });
 
-  final ColorConfig config;
+  final ColorConfig? config;
   final AppThemeMode? themeMode;
   final Widget child;
 
@@ -45,15 +46,15 @@ class AppResponsiveTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var theme = AppThemeData.regular(config.lightColors);
+    var theme = AppThemeData.regular(config?.lightColors ?? {});
 
     /// Updating the colors for the current brightness
     final colorMode = themeMode ?? colorModeOf(context);
     switch (colorMode) {
       case AppThemeMode.dark:
-        theme = theme.withColors(config.darkColors);
+        theme = theme.withColors(config?.darkColors ?? {});
       case AppThemeMode.light:
-        theme = theme.withColors(config.lightColors);
+        theme = theme.withColors(config?.lightColors ?? {});
     }
 
     return AppTheme(
