@@ -22,6 +22,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.level = AppTextLevel.regular14,
@@ -40,6 +41,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -57,6 +59,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -74,6 +77,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -91,6 +95,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -108,6 +113,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -125,6 +131,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -142,6 +149,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -159,6 +167,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -176,6 +185,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -193,6 +203,7 @@ class Txt extends StatelessWidget {
     this.text, {
     super.key,
     this.color,
+    this.fontFamily,
     this.fontSize,
     this.maxLines,
     this.isUnderLine,
@@ -209,6 +220,7 @@ class Txt extends StatelessWidget {
   final String? text;
   final AppTextLevel level;
   final Color? color;
+  final String? fontFamily;
   final double? fontSize;
   final FontWeight? fontWeight;
   final int? maxLines;
@@ -240,16 +252,14 @@ class Txt extends StatelessWidget {
     return Text(
       text ?? '',
       textAlign: textAlign,
-      style: defaultStyle
-          ?.copyWith(
-              color: color,
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-              decoration:
-                  isUnderLine ?? false ? TextDecoration.underline : null,
-              decorationColor: color,
-              fontFamily: "Poppins")
-          .merge(style),
+      style: defaultStyle?.merge(style).copyWith(
+          color: color,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          decoration: isUnderLine ?? false ? TextDecoration.underline : null,
+          decorationColor: color,
+          fontFamily: fontFamily),
+      overflow: overflow,
       maxLines: maxLines,
       textDirection: textDirection ?? textDirection,
       locale: locale ?? locale,

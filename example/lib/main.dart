@@ -5,12 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(
-    MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => ThemeProvider())],
-      child: MyApp(),
-    ),
-  );
+  runApp(MultiProvider(providers: [ChangeNotifierProvider(create: (context) => ThemeProvider())], child: MyApp()));
 }
 
 /// First, create your color configurations:
@@ -25,46 +20,32 @@ class AppColors {
 
   /// add other as per you need. make sure to add new properties in toThemeColor() and ThemeColorKey extension
 
-  const AppColors({
-    required this.background,
-    required this.primary,
-    required this.secondary,
-    required this.accent,
-    required this.error,
-    required this.success,
-  });
+  const AppColors({required this.background, required this.primary, required this.secondary, required this.accent, required this.error, required this.success});
 
   /// Important for responsive_theme
   ThemeColor toThemeColor() {
-    return {
-      'background': background,
-      'primary': primary,
-      'secondary': secondary,
-      'accent': accent,
-      'error': error,
-      'success': success,
-    };
+    return {'background': background, 'primary': primary, 'secondary': secondary, 'accent': accent, 'error': error, 'success': success};
   }
 
   // Colors for light theme
   factory AppColors.light() => AppColors(
-        background: Color(0xFFFFFFFF),
-        primary: Color(0xFF6200EE),
-        secondary: Color(0xFF03DAC6),
-        accent: Color(0xFF3700B3),
-        error: Color(0xFFB00020),
-        success: Color(0xFF4CAF50),
-      );
+    background: Color(0xFFFFFFFF),
+    primary: Color(0xFF6200EE),
+    secondary: Color(0xFF03DAC6),
+    accent: Color(0xFF3700B3),
+    error: Color(0xFFB00020),
+    success: Color(0xFF4CAF50),
+  );
 
   // Colors for dark theme
   factory AppColors.dark() => AppColors(
-        background: Color(0xFF121212),
-        primary: Color(0xFFBB86FC),
-        secondary: Color(0xFF03DAC6),
-        accent: Color(0xFF03DAC5),
-        error: Color(0xFFCF6679),
-        success: Color(0xFF4CAF50),
-      );
+    background: Color(0xFF121212),
+    primary: Color(0xFFBB86FC),
+    secondary: Color(0xFF03DAC6),
+    accent: Color(0xFF03DAC5),
+    error: Color(0xFFCF6679),
+    success: Color(0xFF4CAF50),
+  );
 }
 
 /// this extention make easy to access colors
@@ -103,14 +84,12 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void loadCurrentTheme(BuildContext context,
-      {ThemeMode themeMode = ThemeMode.system}) async {
+  void loadCurrentTheme(BuildContext context, {ThemeMode themeMode = ThemeMode.system}) async {
     final sp = await SharedPreferences.getInstance();
     final isDarkMode = sp.getBool("isDarkTheme");
     if (isDarkMode == null) {
       final useDarkTheme = switch (themeMode) {
-        ThemeMode.system =>
-          AppResponsiveTheme.colorModeOf(context) == AppThemeMode.dark,
+        ThemeMode.system => AppResponsiveTheme.colorModeOf(context) == AppThemeMode.dark,
         ThemeMode.light => false,
         ThemeMode.dark => true,
       };
@@ -148,10 +127,7 @@ class _MyAppState extends State<MyApp> {
       builder: (context, state, _) {
         return AppResponsiveTheme(
           themeMode: state.theme,
-          config: ColorConfig(
-            lightColors: AppColors.light().toThemeColor(),
-            darkColors: AppColors.dark().toThemeColor(),
-          ),
+          config: ColorConfig(lightColors: AppColors.light().toThemeColor(), darkColors: AppColors.dark().toThemeColor()),
           child: MaterialApp(
             title: 'Responsive Theme App',
             theme: state.darkTheme ? ThemeData.dark() : ThemeData.light(),
@@ -203,13 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: Insets.medium16.paddingAll,
           children: <Widget>[
             VGap.large24(),
-            Txt.title24('Welcome to Responsive Theme',
-                color: context.colors.primary),
+            Txt.title24('Welcome to Responsive Theme', color: context.colors.primary, style: TextStyle(fontStyle: FontStyle.italic)),
             VGap.medium16(),
-            Txt.regular16(
-              'Build beautiful responsive apps with ease',
-              color: context.colors.success,
-            ),
+            Txt.regular16('Build beautiful responsive apps with ease', color: context.colors.success),
             VGap.large24(),
             const Txt.regular16('You have pushed the button this many times:'),
             Txt('$_counter', style: context.textTheme?.title18),
@@ -230,12 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Txt.button('Button Text'),
 
             // With additional styling
-            Txt.title24(
-              'Styled Title',
-              color: context.colors.primary,
-              maxLines: 2,
-              textAlign: TextAlign.center,
-            ),
+            Txt.title24('Styled Title', color: context.colors.primary, maxLines: 2, textAlign: TextAlign.center),
 
             VGap.large24(), // vertical gap
 
@@ -256,8 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {},
                 child: Container(
                   margin: EdgeInsets.all(4),
-                  padding:
-                      Insets.medium16.paddingAll, // responsive padding/margin
+                  padding: Insets.medium16.paddingAll, // responsive padding/margin
                   decoration: BoxDecoration(
                     color: context.colors.primary,
                     // responsive radius size with extension
@@ -269,21 +235,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             VGap.large24(), // vertical gap
             // Width-based scaling (scales with screen width)
-            Container(
-              width: 20.w,
-              height: 30.h,
-              color: context.colors.error,
-              child: Center(child: Txt.title18("Error color container")),
-            ),
+            Container(width: 20.w, height: 30.h, color: context.colors.error, child: Center(child: Txt.title18("Error color container"))),
 
             VGap.large24(), // vertical gap
             // Relative scaling (considers both dimensions)
-            Container(
-              width: 15.r,
-              height: 15.r,
-              color: context.colors.secondary,
-              child: Center(child: Txt.title18("Secondary color container")),
-            ),
+            Container(width: 15.r, height: 15.r, color: context.colors.secondary, child: Center(child: Txt.title18("Secondary color container"))),
 
             // Text scaling (adjusts for different screen sizes)
             Text('Responsive Text', style: TextStyle(fontSize: 2.t)),
@@ -292,11 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: FloatingActionButton(onPressed: _incrementCounter, tooltip: 'Increment', child: const Icon(Icons.add)),
     );
   }
 }
